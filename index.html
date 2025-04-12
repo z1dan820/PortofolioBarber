@@ -8,6 +8,27 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <title>My Portfolio - Fahrul Hamzidan Pulungan</title>
+  <style>
+    .certificates-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .certificates-gallery a img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .certificates-gallery a img:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 
 <body>
@@ -35,7 +56,6 @@
       </div>
     </div>
   </section>
-  <!-- End Header -->
 
   <!-- Hero Section -->
   <section id="hero">
@@ -48,7 +68,6 @@
       </div>
     </div>
   </section>
-  <!-- End Hero Section -->
 
   <!-- Projects Section -->
   <section id="projects">
@@ -57,50 +76,15 @@
         <h1 class="section-title">Recent <span>Portfolio</span></h1>
       </div>
       <div class="all-projects">
+        <!-- Contoh project -->
         <div class="project-item">
-          <div class="project-info">
-            <h1>Mullet X Twoblock</h1>
-          </div>
-          <div class="project-img">
-            <img src="p1.png" alt="Mullet X Twoblock haircut style" />
-          </div>
+          <div class="project-info"><h1>Mullet X Twoblock</h1></div>
+          <div class="project-img"><img src="p1.png" alt="Mullet X Twoblock haircut style" /></div>
         </div>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Quiff X Mid Fade</h1>
-          </div>
-          <div class="project-img">
-            <img src="p2.png" alt="Quiff X Mid Fade haircut style" />
-          </div>
-        </div>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Spike X Mid Fade</h1>
-          </div>
-          <div class="project-img">
-            <img src="p3.png" alt="Spike X Mid Fade haircut style" />
-          </div>
-        </div>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Fade X Crop Top</h1>
-          </div>
-          <div class="project-img">
-            <img src="p4.png" alt="Fade X Crop Top haircut style" />
-          </div>
-        </div>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Mid Fade</h1>
-          </div>
-          <div class="project-img">
-            <img src="p5.png" alt="Mid Fade haircut style" />
-          </div>
-        </div>
+        <!-- Tambahkan project lainnya sesuai kebutuhan -->
       </div>
     </div>
   </section>
-  <!-- End Projects Section -->
 
   <!-- About Section -->
   <section id="about">
@@ -118,21 +102,25 @@
       </div>
     </div>
   </section>
-  <!-- End About Section -->
 
   <!-- Certificates Section -->
   <section id="certificates">
     <div class="certificates container">
       <h1 class="section-title">My <span>Certificates</span></h1>
       <div class="certificates-gallery">
-
-        <!-- Contoh sertifikat (ganti link dengan link Google Drive kamu yang public & pakai thumbnail preview) -->
-        <iframe src="https://drive.google.com/file/d/1EumXC89wnpR8y6NIONP13Vr0xyvLSAVm/view?usp=drivesdk" width="300" height="220" allow="autoplay"></iframe>
-        
+        <!-- GANTI FILE_ID DAN LINK DI BAWAH SESUAI GOOGLE DRIVE KAMU -->
+        <a href="https://drive.google.com/file/d/1EumXC89wnpR8y6NIONP13Vr0xyvLSAVm/view?usp=sharing" target="_blank">
+          <img src="https://drive.google.com/thumbnail?id=1EumXC89wnpR8y6NIONP13Vr0xyvLSAVm" alt="Certificate 1" />
+        </a>
+        <!-- Tambahkan lagi dengan format yang sama -->
+        <!--
+        <a href="LINK_GOOGLE_DRIVE_FILE" target="_blank">
+          <img src="https://drive.google.com/thumbnail?id=FILE_ID_GOOGLE_DRIVE" alt="Certificate 2" />
+        </a>
+        -->
       </div>
     </div>
   </section>
-  <!-- End Certificates Section -->
 
   <!-- Contact Section -->
   <section id="contact">
@@ -165,7 +153,6 @@
       </div>
     </div>
   </section>
-  <!-- End Contact Section -->
 
   <!-- Footer -->
   <section id="footer">
@@ -175,26 +162,16 @@
       </div>
       <h2>Your Complete Hair Solution</h2>
       <div class="social-icon">
-        <div class="social-item">
-          <a href="https://www.facebook.com/ham.zidan.94"><img src="https://img.icons8.com/100/000000/facebook-new.png" /></a>
-        </div>
-        <div class="social-item">
-          <a href="https://www.instagram.com/fhamzidanpulungan_?igsh=MXAxajY0NzlncTN1Mg=="><img src="https://img.icons8.com/100/000000/instagram-new.png" /></a>
-        </div>
-        <div class="social-item">
-          <a href="#"><img src="https://img.icons8.com/100/000000/x.png" /></a>
-        </div>
-        <div class="social-item">
-          <a href="https://www.tiktok.com/@zidanpulungan12?_t=8ltrerhOzHV&_r=1"><img src="https://img.icons8.com/100/000000/tiktok.png" /></a>
-        </div>
+        <div class="social-item"><a href="https://www.facebook.com/ham.zidan.94"><img src="https://img.icons8.com/100/000000/facebook-new.png" /></a></div>
+        <div class="social-item"><a href="https://www.instagram.com/fhamzidanpulungan_?igsh=MXAxajY0NzlncTN1Mg=="><img src="https://img.icons8.com/100/000000/instagram-new.png" /></a></div>
+        <div class="social-item"><a href="#"><img src="https://img.icons8.com/100/000000/x.png" /></a></div>
+        <div class="social-item"><a href="https://www.tiktok.com/@zidanpulungan12?_t=8ltrerhOzHV&_r=1"><img src="https://img.icons8.com/100/000000/tiktok.png" /></a></div>
       </div>
       <p>Copyright © 2024 Fahrul Hamzidan Pulungan. All rights reserved.</p>
     </div>
   </section>
-  <!-- End Footer -->
 
   <script src="./app.js"></script>
 </body>
 
 </html>
-
