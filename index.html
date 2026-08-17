@@ -2,260 +2,1357 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portofolio Fahrul Hamzidan Pulungan - Barber dan Content Creator Profesional. Lihat karya potongan rambut terkini dan booking langsung lewat WhatsApp." />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <title>My Portfolio - Fahrul Hamzidan Pulungan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Portofolio Fahrul Hamzidan Pulungan - Barber dan Content Creator Profesional.">
+
+  <title>Fahrul Hamzidan Pulungan | Barber & Content Creator</title>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <style>
+    /* =====================================================
+       GOOGLE FONT
+    ===================================================== */
+
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 10px;
+      scroll-behavior: smooth;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      overflow-x: hidden;
+      background: #fff;
+      color: #111;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-title {
+      font-size: 4rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: .2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-title span {
+      color: crimson;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 12px 30px;
+      color: #fff;
+      background: transparent;
+      border: 2px solid crimson;
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      margin-top: 25px;
+      transition: .3s ease;
+    }
+
+    .cta:hover {
+      background: crimson;
+      color: white;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: 9999;
+    }
+
+    .header-inner {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      background: rgba(10, 10, 10, .65);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand h1 {
+      color: white;
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .brand h1 span {
+      color: crimson;
+    }
+
+    .nav-list ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-list a {
+      color: white;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      transition: .3s ease;
+    }
+
+    .nav-list a:hover {
+      color: crimson;
+    }
+
+    .hamburger {
+      display: none;
+      width: 50px;
+      height: 50px;
+      border: 2px solid white;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .hamburger .bar,
+    .hamburger .bar::before,
+    .hamburger .bar::after {
+      width: 25px;
+      height: 2px;
+      background: white;
+      position: relative;
+      display: block;
+    }
+
+    .hamburger .bar::before,
+    .hamburger .bar::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    .hamburger .bar::before {
+      top: -8px;
+    }
+
+    .hamburger .bar::after {
+      top: 8px;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      background:
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.72)),
+        url("tes.png") center/cover no-repeat;
+    }
+
+    .hero-inner {
+      width: 1200px;
+      max-width: 90%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .hero-content h1 {
+      color: white;
+      font-size: clamp(4rem, 8vw, 8rem);
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .hero-content h1:last-of-type {
+      color: crimson;
+    }
+
+    .hero-content p {
+      color: #ddd;
+      font-size: 1.6rem;
+      margin-top: 20px;
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       PORTFOLIO
+    ===================================================== */
+
+    #projects {
+      background: #fff;
+    }
+
+    .projects-container {
+      width: 1200px;
+      max-width: 95%;
+      margin: auto;
+      padding: 110px 0;
+    }
+
+    .projects-header {
+      margin-bottom: 60px;
+    }
+
+    .all-projects {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .project-item {
+      display: flex;
+      min-height: 380px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #1e252c;
+      box-shadow: 0 15px 40px rgba(0,0,0,.12);
+    }
+
+    .project-info {
+      width: 50%;
+      padding: 45px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      background: linear-gradient(135deg,#202932,#485563);
+      color: white;
+    }
+
+    .project-info h1 {
+      font-size: clamp(2.5rem,4vw,4.5rem);
+      font-weight: 500;
+    }
+
+    .project-info p {
+      color: #ddd;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      margin-top: 15px;
+    }
+
+    .project-img {
+      width: 50%;
+      min-height: 380px;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    /*
+      =====================================================
+      VIDEO
+      =====================================================
+    */
+
+    .project-img video {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      display: block;
+
+      object-fit: cover;
+
+      /*
+        PENTING:
+        Video berada di atas semua elemen dekorasi.
+      */
+      position: relative;
+      z-index: 5;
+
+      pointer-events: auto;
+
+      background: #000;
+    }
+
+    /*
+      Tidak ada overlay di atas video.
+    */
+
+    .project-img::after {
+      display: none;
+    }
+
+    .project-img img {
+      transition: .4s ease;
+    }
+
+    .project-item:hover .project-img img {
+      transform: scale(1.05);
+    }
+
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    #about {
+      background: #f7f7f7;
+    }
+
+    .about-container {
+      width: 1100px;
+      max-width: 90%;
+      margin: auto;
+      padding: 110px 0;
+      display: flex;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .about-img {
+      width: 420px;
+      height: 520px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .about-img::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 8px solid crimson;
+      left: -30px;
+      top: 30px;
+      z-index: 0;
+    }
+
+    .about-img img {
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-content {
+      flex: 1;
+    }
+
+    .about-content .section-title {
+      text-align: left;
+    }
+
+    .about-content h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .about-content p {
+      font-size: 1.5rem;
+      line-height: 2;
+      color: #444;
+    }
+
+
+    /* =====================================================
+       CERTIFICATES
+    ===================================================== */
+
+    #certificates {
+      background: white;
+    }
+
+    .certificates-container {
+      width: 1100px;
+      max-width: 90%;
+      margin: auto;
+      padding: 110px 0;
+    }
+
+    .certificate-card {
+      max-width: 700px;
+      margin: auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,.15);
+      transition: .3s ease;
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .certificate-card img {
+      height: auto;
+      max-height: 600px;
+      object-fit: contain;
+      background: #eee;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    #contact {
+      background: #f7f7f7;
+    }
+
+    .contact-container {
+      width: 1100px;
+      max-width: 90%;
+      margin: auto;
+      padding: 110px 0;
+    }
+
+    .contact-items {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .contact-item {
+      flex: 1;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .contact-item .icon {
+      width: 70px;
+      height: 70px;
+      margin: auto auto 15px;
+    }
+
+    .contact-item h1 {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-item h2,
+    .contact-item a {
+      font-size: 1.4rem;
+      color: #555;
+    }
+
+    .contact-item a:hover {
+      color: crimson;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    #footer {
+      background: linear-gradient(135deg,#202932,#485563);
+      color: white;
+      text-align: center;
+    }
+
+    .footer-container {
+      padding: 70px 20px 25px;
+    }
+
+    .footer-container h2 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin: 15px 0 25px;
+    }
+
+    .social-icon {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .social-item {
+      width: 45px;
+      height: 45px;
+      transition: .3s ease;
+    }
+
+    .social-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .social-item img {
+      object-fit: contain;
+    }
+
+    .footer-container > p {
+      color: #ddd;
+      font-size: 1.2rem;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 900px) {
+
+      .header-inner {
+        padding: 0 20px;
+      }
+
+      .brand h1 {
+        font-size: 1.8rem;
+      }
+
+      .hamburger {
+        display: flex;
+        position: relative;
+        z-index: 10001;
+      }
+
+      .nav-list ul {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100vh;
+
+        background: #111;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 20px;
+
+        transform: translateX(100%);
+        transition: .4s ease;
+      }
+
+      .nav-list ul.active {
+        transform: translateX(0);
+      }
+
+      .nav-list a {
+        font-size: 2.3rem;
+      }
+
+
+      /* Portfolio */
+
+      .project-item {
+        flex-direction: column;
+      }
+
+      .project-info {
+        width: 100%;
+        min-height: 160px;
+        padding: 30px;
+      }
+
+      .project-img {
+        width: 100%;
+        min-height: 300px;
+      }
+
+      .project-img video {
+        min-height: 300px;
+      }
+
+
+      /* About */
+
+      .about-container {
+        flex-direction: column;
+        gap: 60px;
+      }
+
+      .about-img {
+        width: 280px;
+        height: 360px;
+      }
+
+      .about-content {
+        text-align: center;
+      }
+
+      .about-content .section-title {
+        text-align: center;
+      }
+
+
+      /* Contact */
+
+      .contact-items {
+        flex-direction: column;
+      }
+
+      .contact-item {
+        width: 100%;
+      }
+    }
+
+
+    /* =====================================================
+       SMALL PHONE
+    ===================================================== */
+
+    @media (max-width: 500px) {
+
+      .hero-content h1 {
+        font-size: 4.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1.3rem;
+      }
+
+      .projects-container,
+      .about-container,
+      .certificates-container,
+      .contact-container {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        font-size: 3rem;
+      }
+
+      .project-info h1 {
+        font-size: 2.8rem;
+      }
+
+      .project-img {
+        min-height: 250px;
+      }
+
+      .project-img video {
+        min-height: 250px;
+      }
+    }
+  </style>
 </head>
 
+
 <body>
-  <!-- Header -->
-  <section id="header">
-    <div class="header container">
-      <div class="nav-bar">
-        <div class="brand">
-          <a href="#hero">
-            <h1><span>F</span>ahrul <span>H</span>amzidan <span>P</span>ulungan</h1>
-          </a>
-        </div>
-        <div class="nav-list">
-          <div class="hamburger">
-            <div class="bar"></div>
-          </div>
-          <ul>
-            <li><a href="#hero" data-after="Home">Home</a></li>
-            <li><a href="#projects" data-after="Projects">Portfolio</a></li>
-            <li><a href="#about" data-after="About">About</a></li>
-            <li><a href="#certificates" data-after="Certificates">Certificates</a></li>
-            <li><a href="#contact" data-after="Contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Header -->
-  
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="hero container">
-      <div>
-        <h1>Hello, <span></span></h1>
-        <h1>My Name is <span></span></h1>
-        <h1>ZIDAN <span></span></h1>
-        <a href="#projects" type="button" class="cta">Portfolio</a>
-      </div>
-    </div>
-  </section>
-  <!-- End Hero Section -->
-  
-  <!-- Projects Section -->
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="projects container">
-      <div class="projects-header">
-        <h1 class="section-title">Recent <span>Portfolio</span></h1>
-      </div>
-      <div class="all-projects">
-        
-        <!-- PROJECT ITEM 1: VIDEO (BARU) -->
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Textured Mid Fade</h1>
-          </div>
-          <div class="project-img">
-            <!-- Atribut playsinline sangat penting agar video tidak otomatis fullscreen di mobile -->
-            <!-- object-fit: cover membuat video mengisi frame dengan rapi seperti gambar -->
-            <video controls playsinline style="width: 100%; height: 100%; object-fit: cover;">
-              <!-- Ganti src dengan nama file video kamu, pastikan formatnya mp4 -->
-              <source src="1.mp4" type="video/mp4" />
-              Browser kamu tidak mendukung pemutar video.
-            </video>
-          </div>
-        </div>
-        
-    <div class="project-item">
-          <div class="project-info">
-            <h1>Low Taper Fade</h1>
-          </div>
-          <div class="project-img">
-            <!-- Atribut playsinline sangat penting agar video tidak otomatis fullscreen di mobile -->
-            <!-- object-fit: cover membuat video mengisi frame dengan rapi seperti gambar -->
-            <video controls playsinline style="width: 100%; height: 100%; object-fit: cover;">
-              <!-- Ganti src dengan nama file video kamu, pastikan formatnya mp4 -->
-              <source src="2.mp4" type="video/mp4" />
-              Browser kamu tidak mendukung pemutar video.
-            </video>
-          </div>
-        </div>
-        
-    <div class="project-item">
-          <div class="project-info">
-            <h1>Curly Fade</h1>
-          </div>
-          <div class="project-img">
-            <!-- Atribut playsinline sangat penting agar video tidak otomatis fullscreen di mobile -->
-            <!-- object-fit: cover membuat video mengisi frame dengan rapi seperti gambar -->
-            <video controls playsinline style="width: 100%; height: 100%; object-fit: cover;">
-              <!-- Ganti src dengan nama file video kamu, pastikan formatnya mp4 -->
-              <source src="3.mp4" type="video/mp4" />
-              Browser kamu tidak mendukung pemutar video.
-            </video>
-          </div>
-        </div>
-        
-        <!-- PROJECT ITEM 2: GAMBAR -->
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Mullet X Twoblock</h1>
-          </div>
-          <div class="project-img">
-            <img src="p1.png" alt="Mullet X Twoblock haircut style" />
-          </div>
-        </div>
 
-        <!-- PROJECT ITEM 3: GAMBAR -->
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Quiff X Mid Fade</h1>
-          </div>
-          <div class="project-img">
-            <img src="p2.png" alt="Quiff X Mid Fade haircut style" />
-          </div>
-        </div>
 
-        <!-- PROJECT ITEM 4: GAMBAR -->
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Spike X Mid Fade</h1>
-          </div>
-          <div class="project-img">
-            <img src="p3.png" alt="Spike X Mid Fade haircut style" />
-          </div>
-        </div>
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
 
-        <!-- PROJECT ITEM 5: GAMBAR -->
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Fade X Crop Top</h1>
-          </div>
-          <div class="project-img">
-            <img src="p4.png" alt="Fade X Crop Top haircut style" />
-          </div>
-        </div>
-        
+  <header id="header">
 
-      </div>
-    </div>
-  </section>
-  <!-- End Projects Section -->
+    <div class="header-inner">
 
-  <!-- End Projects Section -->
-  
-  <!-- About Section -->
-  <section id="about">
-    <div class="about container">
-      <div class="col-left">
-        <div class="about-img">
-          <img src="tes.png" alt="Zidan Barber Profile" />
-        </div>
-      </div>
-      <div class="col-right">
-        <h1 class="section-title">About <span>Me</span></h1>
-        <h2>Barber x Content Creator</h2>
-        <p>Dengan experience yang cukup, saya dapat memaksimalkan apa yang diinginkan oleh customer. #STYLINGITUPENTING</p>
-        <a href="https://wa.me/+6288271187357" class="cta">Reservasi NOW</a>
-      </div>
-    </div>
-  </section>
-  <!-- End About Section -->
-  
-  <!-- Certificates Section -->
-  <section id="projects">
-    <div class="projects container">
-      <h1 class="project-item">My <span>Certificates</span></h1>
-      <div class="project-info">
-        <!-- GANTI FILE_ID DAN LINK DI BAWAH SESUAI GOOGLE DRIVE KAMU -->
-        <a href="https://drive.google.com/file/d/1EumXC89wnpR8y6NIONP13Vr0xyvLSAVm/view?usp=sharing" target="_blank">
-          <img src="https://drive.google.com/thumbnail?id=1EumXC89wnpR8y6NIONP13Vr0xyvLSAVm" alt="Certificate 1" />
-        </a>
-        <!-- Tambahkan lagi dengan format yang sama -->
-        <!--
-        <a href="LINK_GOOGLE_DRIVE_FILE" target="_blank">
-          <img src="https://drive.google.com/thumbnail?id=FILE_ID_GOOGLE_DRIVE" alt="Certificate 2" />
-        </a>
-        -->
-      </div>
-    </div>
-  </section>
-  
-  <!-- End Certificates Section -->
-  
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="contact container">
-      <div>
-        <h1 class="section-title">Contact <span>Info</span></h1>
-      </div>
-      <div class="contact-items">
-        <div class="contact-item">
-          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
-          <div class="contact-info">
-            <h1>Phone</h1>
-            <a href="https://wa.me/+6288271187357">0882 7118 7357</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
-          <div class="contact-info">
-            <h1>Email</h1>
-            <h2>fhamzidanpulungan@gmail.com</h2>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
-          <div class="contact-info">
-            <h1>Address</h1>
-            <h2>INDONESIA</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Contact Section -->
-  
-  <!-- Footer -->
-  <section id="footer">
-    <div class="footer container">
       <div class="brand">
-        <h1><span>F</span>ahrul <span>H</span>amzidan</h1>
+        <a href="#hero">
+          <h1>
+            <span>F</span>ahrul
+            <span>H</span>amzidan
+            <span>P</span>ulungan
+          </h1>
+        </a>
       </div>
-      <h2>Your Complete Hair Solution</h2>
-      <div class="social-icon">
-        <div class="social-item">
-          <a href="https://www.facebook.com/ham.zidan.94"><img src="https://img.icons8.com/100/000000/facebook-new.png" /></a>
+
+      <nav class="nav-list">
+
+        <div class="hamburger" id="hamburger">
+          <div class="bar"></div>
         </div>
-        <div class="social-item">
-          <a href="https://www.instagram.com/fhamzidanpulungan_?igsh=MXAxajY0NzlncTN1Mg=="><img src="https://img.icons8.com/100/000000/instagram-new.png" /></a>
-        </div>
-        <div class="social-item">
-          <a href="#"><img src="https://img.icons8.com/100/000000/x.png" /></a>
-        </div>
-        <div class="social-item">
-          <a href="https://www.tiktok.com/@zidanpulungan12?_t=8ltrerhOzHV&_r=1"><img src="https://img.icons8.com/100/000000/tiktok.png" /></a>
-        </div>
-      </div>
-      <p>Copyright © 2024 Fahrul Hamzidan Pulungan. All rights reserved.</p>
+
+        <ul id="nav-menu">
+
+          <li>
+            <a href="#hero">Home</a>
+          </li>
+
+          <li>
+            <a href="#projects">Portfolio</a>
+          </li>
+
+          <li>
+            <a href="#about">About</a>
+          </li>
+
+          <li>
+            <a href="#certificates">Certificates</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
     </div>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
+
+  <section id="hero">
+
+    <div class="hero-inner">
+
+      <div class="hero-content">
+
+        <h1>Hello,</h1>
+
+        <h1>My Name Is</h1>
+
+        <h1>ZIDAN</h1>
+
+        <p>
+          Professional Barber & Content Creator.
+          Explore my latest haircut portfolio and creative work.
+        </p>
+
+        <a href="#projects" class="cta">
+          View Portfolio
+        </a>
+
+      </div>
+
+    </div>
+
   </section>
-    <!-- End Footer -->
 
 
-  <!-- APP.JS DINONAKTIFKAN UNTUK TEST VIDEO -->
-  <!--
-  <script src="./app.js"></script>
-  -->
+
+  <!-- =====================================================
+       PORTFOLIO
+  ===================================================== -->
+
+  <section id="projects">
+
+    <div class="projects-container">
+
+      <div class="projects-header">
+
+        <h1 class="section-title">
+          Recent <span>Portfolio</span>
+        </h1>
+
+      </div>
+
+
+      <div class="all-projects">
+
+
+        <!-- VIDEO 1 -->
+
+        <div class="project-item">
+
+          <div class="project-info">
+
+            <h1>
+              Textured Mid Fade
+            </h1>
+
+            <p>
+              Clean textured mid fade haircut with modern styling.
+            </p>
+
+          </div>
+
+          <div class="project-img">
+
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              controlsList="nodownload"
+            >
+
+              <source
+                src="1.mp4"
+                type="video/mp4"
+              >
+
+              Browser kamu tidak mendukung video HTML5.
+
+            </video>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- VIDEO 2 -->
+
+        <div class="project-item">
+
+          <div class="project-info">
+
+            <h1>
+              Low Taper Fade
+            </h1>
+
+            <p>
+              Modern low taper fade with clean finishing.
+            </p>
+
+          </div>
+
+          <div class="project-img">
+
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              controlsList="nodownload"
+            >
+
+              <source
+                src="2.mp4"
+                type="video/mp4"
+              >
+
+              Browser kamu tidak mendukung video HTML5.
+
+            </video>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- VIDEO 3 -->
+
+        <div class="project-item">
+
+          <div class="project-info">
+
+            <h1>
+              Curly Fade
+            </h1>
+
+            <p>
+              Curly hairstyle combined with a clean fade.
+            </p>
+
+          </div>
+
+          <div class="project-img">
+
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              controlsList="nodownload"
+            >
+
+              <source
+                src="3.mp4"
+                type="video/mp4"
+              >
+
+              Browser kamu tidak mendukung video HTML5.
+
+            </video>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- IMAGE 1 -->
+
+        <div class="project-item">
+
+          <div class="project-info">
+
+            <h1>
+              Mullet X Twoblock
+            </h1>
+
+            <p>
+              Modern mullet combined with Korean-inspired twoblock styling.
+            </p>
+
+          </div>
+
+          <div class="project-img">
+
+            <img
+              src="p1.png"
+              alt="Mullet X Twoblock haircut"
+            >
+
+          </div>
+
+        </div>
+
+
+
+        <!-- IMAGE 2 -->
+
+        <div class="project-item">
+
+          <div class="project-info">
+
+            <h1>
+              Quiff X Mid Fade
+            </h1>
+
+            <p>
+              Sharp quiff hairstyle with a clean mid fade.
+            </p>
+
+          </div>
+
+          <div class="project-img">
+
+            <img
+              src="p2.png"
+              alt="Quiff X Mid Fade haircut"
+            >
+
+          </div>
+
+        </div>
+
+
+
+        <!-- IMAGE 3 -->
+
+        <div class="project-item">
+
+          <div class="project-info">
+
+            <h1>
+              Spike X Mid Fade
+            </h1>
+
+            <p>
+              Textured spiky hairstyle with a modern mid fade.
+            </p>
+
+          </div>
+
+          <div class="project-img">
+
+            <img
+              src="p3.png"
+              alt="Spike X Mid Fade haircut"
+            >
+
+          </div>
+
+        </div>
+
+
+
+        <!-- IMAGE 4 -->
+
+        <div class="project-item">
+
+          <div class="project-info">
+
+            <h1>
+              Fade X Crop Top
+            </h1>
+
+            <p>
+              Modern crop top hairstyle with a sharp fade.
+            </p>
+
+          </div>
+
+          <div class="project-img">
+
+            <img
+              src="p4.png"
+              alt="Fade X Crop Top haircut"
+            >
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       ABOUT
+  ===================================================== -->
+
+  <section id="about">
+
+    <div class="about-container">
+
+      <div class="about-img">
+
+        <img
+          src="tes.png"
+          alt="Fahrul Hamzidan Pulungan Barber"
+        >
+
+      </div>
+
+
+      <div class="about-content">
+
+        <h1 class="section-title">
+          About <span>Me</span>
+        </h1>
+
+        <h2>
+          Barber × Content Creator
+        </h2>
+
+        <p>
+          Dengan experience yang cukup, saya dapat memaksimalkan
+          apa yang diinginkan oleh customer.
+        </p>
+
+        <p>
+          Saya terus mengembangkan teknik cutting dan styling
+          untuk memberikan hasil terbaik bagi setiap customer.
+        </p>
+
+        <p>
+          #STYLINGITUPENTING
+        </p>
+
+        <a
+          href="https://wa.me/6288271187357"
+          class="cta"
+          target="_blank"
+        >
+          Reservasi NOW
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       CERTIFICATES
+  ===================================================== -->
+
+  <section id="certificates">
+
+    <div class="certificates-container">
+
+      <h1 class="section-title">
+        My <span>Certificates</span>
+      </h1>
+
+      <div class="certificate-card">
+
+        <a
+          href="https://drive.google.com/file/d/1EumXC89wnpR8y6NIONP13Vr0xyvLSAVm/view"
+          target="_blank"
+        >
+
+          <img
+            src="https://drive.google.com/thumbnail?id=1EumXC89wnpR8y6NIONP13Vr0xyvLSAVm"
+            alt="Fahrul Hamzidan Certificate"
+          >
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       CONTACT
+  ===================================================== -->
+
+  <section id="contact">
+
+    <div class="contact-container">
+
+      <h1 class="section-title">
+        Contact <span>Info</span>
+      </h1>
+
+
+      <div class="contact-items">
+
+
+        <!-- PHONE -->
+
+        <div class="contact-item">
+
+          <div class="icon">
+
+            <img
+              src="https://img.icons8.com/bubbles/100/000000/phone.png"
+              alt="Phone"
+            >
+
+          </div>
+
+          <h1>Phone</h1>
+
+          <a href="https://wa.me/6288271187357">
+            0882 7118 7357
+          </a>
+
+        </div>
+
+
+
+        <!-- EMAIL -->
+
+        <div class="contact-item">
+
+          <div class="icon">
+
+            <img
+              src="https://img.icons8.com/bubbles/100/000000/new-post.png"
+              alt="Email"
+            >
+
+          </div>
+
+          <h1>Email</h1>
+
+          <h2>
+            fhamzidanpulungan@gmail.com
+          </h2>
+
+        </div>
+
+
+
+        <!-- ADDRESS -->
+
+        <div class="contact-item">
+
+          <div class="icon">
+
+            <img
+              src="https://img.icons8.com/bubbles/100/000000/map-marker.png"
+              alt="Location"
+            >
+
+          </div>
+
+          <h1>Address</h1>
+
+          <h2>
+            INDONESIA
+          </h2>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
+  <footer id="footer">
+
+    <div class="footer-container">
+
+      <div class="brand">
+
+        <h1>
+          <span>F</span>ahrul
+          <span>H</span>amzidan
+        </h1>
+
+      </div>
+
+      <h2>
+        Your Complete Hair Solution
+      </h2>
+
+
+      <div class="social-icon">
+
+
+        <div class="social-item">
+
+          <a
+            href="https://www.facebook.com/ham.zidan.94"
+            target="_blank"
+          >
+
+            <img
+              src="https://img.icons8.com/100/000000/facebook-new.png"
+              alt="Facebook"
+            >
+
+          </a>
+
+        </div>
+
+
+
+        <div class="social-item">
+
+          <a
+            href="https://www.instagram.com/fhamzidanpulungan_/"
+            target="_blank"
+          >
+
+            <img
+              src="https://img.icons8.com/100/000000/instagram-new.png"
+              alt="Instagram"
+            >
+
+          </a>
+
+        </div>
+
+
+
+        <div class="social-item">
+
+          <a href="#">
+
+            <img
+              src="https://img.icons8.com/100/000000/x.png"
+              alt="X"
+            >
+
+          </a>
+
+        </div>
+
+
+
+        <div class="social-item">
+
+          <a
+            href="https://www.tiktok.com/@zidanpulungan12"
+            target="_blank"
+          >
+
+            <img
+              src="https://img.icons8.com/100/000000/tiktok.png"
+              alt="TikTok"
+            >
+
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+      <p>
+        Copyright © 2026 Fahrul Hamzidan Pulungan.
+        All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       HANYA UNTUK MOBILE NAVBAR
+       ===================================================== -->
+
+  <script>
+
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    hamburger.addEventListener("click", function () {
+
+      navMenu.classList.toggle("active");
+
+    });
+
+
+    /* Tutup menu setelah link diklik */
+
+    document.querySelectorAll("#nav-menu a").forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        navMenu.classList.remove("active");
+
+      });
+
+    });
+
+  </script>
+
+
 </body>
-
 </html>
